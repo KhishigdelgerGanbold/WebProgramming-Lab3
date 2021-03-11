@@ -10,10 +10,14 @@
     <body>
         <div class="content">
             <h2>Calendar</h2>
-            <label>Search a month:</label>
-            <input type="text" id="value" oninput="search(this)" />
+            <label>Search by month:</label>
+            <input type="text" id="value" oninput="searchmon(this)" />
+            <label>Search by value:</label>
+            <input type="text" id="value2" oninput="searchval(this)" />
 
             <p id="demo">
+            </p>
+            <p id="demo2">
             </p>
 
             <div id="myCalendar" class="calendar" style="margin-bottom: 20px"></div>

@@ -13,11 +13,32 @@
     dec: { 20: "Өвлийн семистер хаагдах нь дээ", 30: "Дүн гаргаж дууслаа баярлалаа баяртай" }
 };
 
-function search(el) {
-    let val = el.value;
+function searchmon(arg1) {
+    let val = arg1.value;
+    if (val == "") {
+        document.getElementById('demo').textContent = "";
+    }
     let text = calendarevents[val];
-    document.getElementById('demo').textContent = JSON.stringify(text);
+    let str = JSON.stringify(text);
+    document.getElementById('demo').textContent = "Search by month: " + str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
 }
+
+function searchval(arg2) {
+    let val = arg2.value;
+    if (val == "") {
+        document.getElementById('demo2').textContent = "";
+    } else {
+        for (i = 0; i < Object.values(calendarevents).length; i++) {
+            let str = JSON.stringify(Object.values(calendarevents)[i]);
+            let n = str.search(val);
+            if (n != -1) {
+                document.getElementById('demo2').textContent = "Search by value: " + str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
+                break;
+            }
+        }
+    }
+}
+
 
 var Calendar = function () {
     return function (t) {
