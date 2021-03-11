@@ -1,0 +1,100 @@
+
+.calendar *, .calendar *:before,.calendar *:after{
+      box-sizing:border-box
+}
+.calendar {
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px #e7e9ed;
+    box-shadow: 0 4px 22px 0 rgba(0,0,0,0.05);
+    margin: 0 auto;
+    overflow: hidden;
+    width: 350px
+}
+
+@media(max-width:1200px)
+       {
+           .calendar{width:auto}
+       }
+
+    .calendar .calendar-btn{
+       -moz-user-select:none;
+       -ms-user-select:none;
+       -webkit-appearance:button;
+       background:0;
+       border:0;
+       color:inherit;
+       cursor:pointer;
+       font:inherit;
+       line-height:normal;
+       min-width:27px;
+       outline:0;
+       overflow:visible;
+       padding:0;
+       text-align:center;
+}
+
+    .calendar .calendar-header{
+        align-items:center;
+        display:flex;
+        padding:10px;
+        text-transform:uppercase
+
+    }
+    .calendar .calendar-header svg {
+        fill: #e7e9ed;
+    }
+    .calendar .calendar-header__label{
+        font-weight:bold;
+        text-align:center;
+        width:100%
+
+    }
+.calendar .calendar-week {
+    background-color:chartreuse;
+    display: flex;
+    flex-wrap: wrap
+}
+    .calendar .calendar-week span {
+        color: #fff;
+        flex-direction: column;
+        flex: 0 0 14.28%;
+        font-size: 1em;
+        font-weight: bold;
+        max-width: 14.28%;
+        padding: 15px 0;
+        text-align: center;
+        text-transform: uppercase
+    }
+.calendar .calendar-body {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px
+}
+.calendar .calendar-date {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 14.28%;
+    max-width: 14.28%;
+    padding: 10px 0
+}
+    .calendar .calendar-date--active{
+        cursor:pointer
+    }
+.calendar .calendar-date--today {
+    background-color: #e7e9ed;
+    color: #333;
+}
+.calendar .calendar-date--selected {
+    background-color: #538fcd;
+    color: #fff;
+}
+    .calendar .calendar-date--disabled{
+        border-radius:0;
+        cursor:not-allowed;
+        opacity:.2
+    }
