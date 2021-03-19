@@ -13,8 +13,9 @@
     dec: { 20: "Өвлийн семистер хаагдах нь дээ", 30: "Дүн гаргаж дууслаа баярлалаа баяртай" }
 };
 
-function searchmon(arg1) {
-    let val = arg1.value;
+
+function searchmon() {
+    let val = document.getElementById('value').value;
     if (val == "") {
         document.getElementById('demo').textContent = "";
     }
@@ -23,8 +24,8 @@ function searchmon(arg1) {
     document.getElementById('demo').textContent = "Search by month: " + str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
 }
 
-function searchval(arg2) {
-    let val = arg2.value;
+function searchval() {
+    let val = document.getElementById('value2').value;
     if (val == "") {
         document.getElementById('demo2').textContent = "";
     } else {
@@ -40,16 +41,20 @@ function searchval(arg2) {
 }
 
 
+
+
+
+
 var Calendar = function () {
     return function (t) {
         this.start = function () {
-            document.querySelector(obj.selector).innerHTML = '\n            <div class="calendar-header">\n                <button type="button" class="calendar-btn" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24" ><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>\n                <div class="calendar-header__label" data-calendar-label="month"></div>\n                <button type="button" class="calendar-btn" data-calendar-toggle="next"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>\n            </div>\n            <div class="calendar-week"></div>\n            <div class="calendar-body" data-calendar-area="month"></div>\n            ',
+            document.querySelector(obj.selector).innerHTML = '\n <div class="calendar-header">\n <button type="button" class="calendar-btn" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24" ><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>\n <div class="calendar-header__label" data-calendar-label="month"></div>\n <button type="button" class="calendar-btn" data-calendar-toggle="next"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>\n </div>\n <div class="calendar-week"></div>\n <div class="calendar-body" data-calendar-area="month"></div>\n',
                 obj.button_prev = document.querySelector(obj.selector + " [data-calendar-toggle=previous]"),
                 obj.button_next = document.querySelector(obj.selector + " [data-calendar-toggle=next]"),
                 obj.month = document.querySelector(obj.selector + " [data-calendar-area=month]"),
                 obj.month_label = document.querySelector(obj.selector + " [data-calendar-label=month]"),
                 obj.date.setDate(1), s(),
-                document.querySelector(`${obj.selector} .calendar-week`).innerHTML = `\n                <span>${obj.shortWeekday[0]}</span>\n                <span>${obj.shortWeekday[1]}</span>\n                <span>${obj.shortWeekday[2]}</span>\n                <span>${obj.shortWeekday[3]}</span>\n                <span>${obj.shortWeekday[4]}</span>\n                <span>${obj.shortWeekday[5]}</span>\n                <span>${obj.shortWeekday[6]}</span>\n            `,
+                document.querySelector(`${obj.selector} .calendar-week`).innerHTML = `\n <span>${obj.shortWeekday[0]}</span>\n <span>${obj.shortWeekday[1]}</span>\n <span>${obj.shortWeekday[2]}</span>\n <span>${obj.shortWeekday[3]}</span>\n <span>${obj.shortWeekday[4]}</span>\n <span>${obj.shortWeekday[5]}</span>\n <span>${obj.shortWeekday[6]}</span>\n`,
                 e(obj.button_prev, "click", i),
                 e(obj.button_next, "click", c)
         }

@@ -11,13 +11,18 @@
         <div class="content">
             <h2>Calendar</h2>
             <label>Search by month:</label>
-            <input type="text" id="value" oninput="searchmon(this)" />
+            <input type="text" id="value" onkeypress="return(event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" />
+            <button onclick="searchmon()">Search by month</button>
+            <br />
             <label>Search by value:</label>
-            <input type="text" id="value2" oninput="searchval(this)" />
+            <input type="text" id="value2" />
+            <button onclick="searchval()">Search by value</button>
 
             <p id="demo">
             </p>
             <p id="demo2">
+            </p>
+            <p id="demo3">
             </p>
 
             <div id="myCalendar" class="calendar" style="margin-bottom: 20px"></div>
